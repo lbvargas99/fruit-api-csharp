@@ -23,7 +23,7 @@ namespace Fruit.Crud.Core.Application.Services
             _mapper = mapper;
         }
 
-        public async Task<ResultService<FruitDTO>> Create(FruitDTO fruitDTO)
+        public async Task<ResultService<FruitDTO>> CreateAsync(FruitDTO fruitDTO)
         {
             if (fruitDTO == null)
                 return ResultService.Fail<FruitDTO>("Deve ser passado valores ao objeto!");
@@ -37,10 +37,25 @@ namespace Fruit.Crud.Core.Application.Services
             var fruit = _mapper.Map<Domain.Entities.Fruit>(fruitDTO);
 
             //Inserir no banco e armazenar em uma var
-            var data = await _fruitRepository.Create(fruit);
+            var data = await _fruitRepository.CreateAsync(fruit);
 
             //Converte o data que és uma entidade para a DTO
             return ResultService.Ok<FruitDTO>(_mapper.Map<FruitDTO>(data));
+        }
+
+        public async Task<ResultService<ICollection<FruitDTO>>> GetAllAsync()
+        {
+            var fruits = await _fruitRepository.GetAllAsync();
+            // ^ Busca entidade - v devolve a DTO
+            return ResultService.Ok<ICollection<FruitDTO>>(_mapper.Map<ICollection<FruitDTO>>(fruits));
+        }
+
+        public async Task<ResultService<FruitDTO>> GetByIdAsync(int id)
+        {
+            var fruit = await _fruitRepository.GetByIdAsync(id);
+            if (fruit == null)
+                return ResultService.Fail<FruitDTO>("Objeto não encontrado!");
+            return ResultService.Ok(_mapper.Map<FruitDTO>(fruit));
         }
     }
 }

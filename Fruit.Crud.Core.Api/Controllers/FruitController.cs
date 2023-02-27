@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Fruit.Crud.Core.Api.Controllers
 {
-    [Route("api/fruit")]
+    [Route("api/[controller]")]
     [ApiController]
     public class FruitController : ControllerBase
     {
@@ -15,13 +15,34 @@ namespace Fruit.Crud.Core.Api.Controllers
             _fruitService = fruitService;
         }
 
-        [HttpPost("create")]
-        public async Task<ActionResult> Create([FromBody] FruitDTO fruitDTO)
+        [HttpPost]
+        public async Task<ActionResult> CreateAsync([FromBody] FruitDTO fruitDTO)
         {
-            var result = await _fruitService.Create(fruitDTO);
+            var result = await _fruitService.CreateAsync(fruitDTO);
             if (result.IsSuccess)
                 return Ok(result);
             
+            return BadRequest(result);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult> GetAsync()
+        {
+            var result = await _fruitService.GetAllAsync();
+            if (result.IsSuccess)
+                return Ok(result);
+
+            return BadRequest(result);
+        }
+
+        [HttpGet]
+        [Route("{id}")]
+        public async Task<ActionResult> GetByIdAsync(int id)
+        {
+            var result = await _fruitService.GetByIdAsync(id);
+            if (result.IsSuccess)
+                return Ok(result);
+
             return BadRequest(result);
         }
 

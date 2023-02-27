@@ -19,30 +19,30 @@ namespace Fruit.Crud.Core.Infra.Data.Repositories
             _db = db;
         }
 
-        public async Task<Domain.Entities.Fruit> Create(Domain.Entities.Fruit fruit)
+        public async Task<Domain.Entities.Fruit> CreateAsync(Domain.Entities.Fruit fruit)
         {
             _db.Add(fruit);
             await _db.SaveChangesAsync();
             return fruit;
         }
 
-        public async Task Delete(Domain.Entities.Fruit fruit)
+        public async Task DeleteAsync(Domain.Entities.Fruit fruit)
         {
             _db.Remove(fruit);
             await _db.SaveChangesAsync();
         }
 
-        public async Task<ICollection<Domain.Entities.Fruit>> GetAll()
+        public async Task<ICollection<Domain.Entities.Fruit>> GetAllAsync()
         {
             return await _db.Fruits.ToListAsync();
         }
 
-        public async Task<Domain.Entities.Fruit> GetById(int id)
+        public async Task<Domain.Entities.Fruit> GetByIdAsync(int id)
         {
             return await _db.Fruits.FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public async Task Update(Domain.Entities.Fruit fruit)
+        public async Task UpdateAsync(Domain.Entities.Fruit fruit)
         {
             _db.Update(fruit);
             await _db.SaveChangesAsync();

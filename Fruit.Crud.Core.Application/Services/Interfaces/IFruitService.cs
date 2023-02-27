@@ -9,6 +9,8 @@ namespace Fruit.Crud.Core.Application.Services.Interfaces
 {
     public interface IFruitService
     {
-        Task<ResultService<FruitDTO>> Create(FruitDTO fruitDTO);
+        Task<ResultService<FruitDTO>> CreateAsync(FruitDTO fruitDTO);
+        Task<ResultService<ICollection<FruitDTO>>> GetAllAsync();
+        Task<ResultService<FruitDTO>> GetByIdAsync(int id);
     }
 }

@@ -9,10 +9,10 @@ namespace Fruit.Crud.Core.Domain.Repositories
 {
     public interface IFruitRepository
     {
-        Task<Entities.Fruit> GetById(int id);
-        Task<ICollection<Entities.Fruit>> GetAll();
-        Task<Entities.Fruit> Create(Entities.Fruit fruit);
-        Task Update(Entities.Fruit fruit);
-        Task Delete(Entities.Fruit fruit);
+        Task<Entities.Fruit> GetByIdAsync(int id);
+        Task<ICollection<Entities.Fruit>> GetAllAsync();
+        Task<Entities.Fruit> CreateAsync(Entities.Fruit fruit);
+        Task UpdateAsync(Entities.Fruit fruit);
+        Task DeleteAsync(Entities.Fruit fruit);
     }
 }
