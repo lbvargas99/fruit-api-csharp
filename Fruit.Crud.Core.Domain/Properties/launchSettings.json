@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "Fruit.Crud.Core.Domain": {
+      "commandName": "Project"
+    }
+  }
+}

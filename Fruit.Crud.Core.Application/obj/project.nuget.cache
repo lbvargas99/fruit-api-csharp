@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "a73TGnhB0Iekn/K2t45U4E5DU+WMQtIOoR4s67GDdkwWeinZeVo2rcBZ+rqyqNlFOKocbhMi+VoUXj6X7ClyWg==",
+  "success": true,
+  "projectFilePath": "C:\\Git\\Fruit.Crud.Core\\Fruit.Crud.Core.Application\\Fruit.Crud.Core.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Leonardo\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\Leonardo\\.nuget\\packages\\fluentvalidation\\11.5.1\\fluentvalidation.11.5.1.nupkg.sha512",
+    "C:\\Users\\Leonardo\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

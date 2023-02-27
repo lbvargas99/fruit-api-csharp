@@ -1,0 +1,15 @@
+C:\Git\Fruit.Crud.Core\Fruit.Crud.Core.Infra.Data\bin\Debug\net6.0\Fruit.Crud.Core.Infra.Data.deps.json
+C:\Git\Fruit.Crud.Core\Fruit.Crud.Core.Infra.Data\bin\Debug\net6.0\Fruit.Crud.Core.Infra.Data.dll
+C:\Git\Fruit.Crud.Core\Fruit.Crud.Core.Infra.Data\bin\Debug\net6.0\Fruit.Crud.Core.Infra.Data.pdb
+C:\Git\Fruit.Crud.Core\Fruit.Crud.Core.Infra.Data\bin\Debug\net6.0\Fruit.Crud.Core.Domain.dll
+C:\Git\Fruit.Crud.Core\Fruit.Crud.Core.Infra.Data\bin\Debug\net6.0\Fruit.Crud.Core.Domain.pdb
+C:\Git\Fruit.Crud.Core\Fruit.Crud.Core.Infra.Data\obj\Debug\net6.0\Fruit.Crud.Core.Infra.Data.csproj.AssemblyReference.cache
+C:\Git\Fruit.Crud.Core\Fruit.Crud.Core.Infra.Data\obj\Debug\net6.0\Fruit.Crud.Core.Infra.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Git\Fruit.Crud.Core\Fruit.Crud.Core.Infra.Data\obj\Debug\net6.0\Fruit.Crud.Core.Infra.Data.AssemblyInfoInputs.cache
+C:\Git\Fruit.Crud.Core\Fruit.Crud.Core.Infra.Data\obj\Debug\net6.0\Fruit.Crud.Core.Infra.Data.AssemblyInfo.cs
+C:\Git\Fruit.Crud.Core\Fruit.Crud.Core.Infra.Data\obj\Debug\net6.0\Fruit.Crud.Core.Infra.Data.csproj.CoreCompileInputs.cache
+C:\Git\Fruit.Crud.Core\Fruit.Crud.Core.Infra.Data\obj\Debug\net6.0\Fruit.Crud.Core.Infra.Data.csproj.CopyComplete
+C:\Git\Fruit.Crud.Core\Fruit.Crud.Core.Infra.Data\obj\Debug\net6.0\Fruit.Crud.Core.Infra.Data.dll
+C:\Git\Fruit.Crud.Core\Fruit.Crud.Core.Infra.Data\obj\Debug\net6.0\refint\Fruit.Crud.Core.Infra.Data.dll
+C:\Git\Fruit.Crud.Core\Fruit.Crud.Core.Infra.Data\obj\Debug\net6.0\Fruit.Crud.Core.Infra.Data.pdb
+C:\Git\Fruit.Crud.Core\Fruit.Crud.Core.Infra.Data\obj\Debug\net6.0\ref\Fruit.Crud.Core.Infra.Data.dll
