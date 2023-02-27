@@ -17,12 +17,19 @@ namespace Fruit.Crud.Core.Domain.Entities
         public Fruit(string description, int valueA, int valueB)
         {
             Validation(description, valueA, valueB);
+            Description = description;
+            ValueA = valueA;
+            ValueB = valueB;
         }
 
+        //Update
         public Fruit(int id, string description, int valueA, int valueB)
         {
             DomainValidationException.When(id < 0, "ID inválido.");
             Id = id;
+            Description = description;
+            ValueA = valueA;
+            ValueB = valueB;
             Validation(description, valueA, valueB);
         }
 
