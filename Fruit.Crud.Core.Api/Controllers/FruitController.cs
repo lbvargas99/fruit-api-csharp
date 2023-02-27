@@ -46,5 +46,25 @@ namespace Fruit.Crud.Core.Api.Controllers
             return BadRequest(result);
         }
 
+        [HttpPut]
+        public async Task<ActionResult> UpdateAsync([FromBody] FruitDTO fruitDTO)
+        {
+            var result = await _fruitService.UpdateAsync(fruitDTO);
+            if (result.IsSuccess)
+                return Ok(result);
+
+            return BadRequest(result);
+        }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public async Task<ActionResult> DeleteAsync(int id)
+        {
+            var result = await _fruitService.DeleteAsync(id);
+            if (result.IsSuccess)
+                return Ok(result);
+
+            return BadRequest(result);
+        }
     }
 }

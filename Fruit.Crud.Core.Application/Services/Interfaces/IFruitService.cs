@@ -12,5 +12,8 @@ namespace Fruit.Crud.Core.Application.Services.Interfaces
         Task<ResultService<FruitDTO>> CreateAsync(FruitDTO fruitDTO);
         Task<ResultService<ICollection<FruitDTO>>> GetAllAsync();
         Task<ResultService<FruitDTO>> GetByIdAsync(int id);
+        Task<ResultService> UpdateAsync(FruitDTO fruitDTO);
+        Task<ResultService> DeleteAsync(int id);
+
     }
 }

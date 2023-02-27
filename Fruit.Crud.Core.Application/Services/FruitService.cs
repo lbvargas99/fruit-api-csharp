@@ -2,6 +2,7 @@
 using Fruit.Crud.Core.Application.DTOs;
 using Fruit.Crud.Core.Application.DTOs.Validations;
 using Fruit.Crud.Core.Application.Services.Interfaces;
+using Fruit.Crud.Core.Domain.Entities;
 using Fruit.Crud.Core.Domain.Repositories;
 using System;
 using System.Collections.Generic;
@@ -43,6 +44,16 @@ namespace Fruit.Crud.Core.Application.Services
             return ResultService.Ok<FruitDTO>(_mapper.Map<FruitDTO>(data));
         }
 
+        public async Task<ResultService> DeleteAsync(int id)
+        {
+            var fruit = await _fruitRepository.GetByIdAsync(id);
+            if (fruit == null)
+                return ResultService.Fail("Objeto não encontrado");
+
+            await _fruitRepository.DeleteAsync(fruit);
+            return ResultService.Ok("Objeto removido com sucesso!");
+        }
+
         public async Task<ResultService<ICollection<FruitDTO>>> GetAllAsync()
         {
             var fruits = await _fruitRepository.GetAllAsync();
@@ -56,6 +67,24 @@ namespace Fruit.Crud.Core.Application.Services
             if (fruit == null)
                 return ResultService.Fail<FruitDTO>("Objeto não encontrado!");
             return ResultService.Ok(_mapper.Map<FruitDTO>(fruit));
+        }
+
+        public async Task<ResultService> UpdateAsync(FruitDTO fruitDTO)
+        {
+            if (fruitDTO == null)
+                return ResultService.Fail("Objeto deve ser informado");
+
+            var validation = new FruitDTOValidator().Validate(fruitDTO);
+            if (!validation.IsValid)
+                return ResultService.RequestError("Problemas com validação dos campos do objeto!", validation);
+
+            var fruit = await _fruitRepository.GetByIdAsync(fruitDTO.Id);
+            if (fruit == null)
+                return ResultService.Fail("Objeto não encontrado!");
+
+            fruit = _mapper.Map<FruitDTO, Domain.Entities.Fruit>(fruitDTO, fruit);
+            await _fruitRepository.UpdateAsync(fruit);
+            return ResultService.Ok("Objeto alterado com sucesso!");
         }
     }
 }
